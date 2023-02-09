@@ -44,37 +44,43 @@ Route::middleware(['auth'])->group(function () {
 
     Route::controller(dashboardcontroller::class)->group(function () {
         Route::get('/admin/dashboard', 'index')->name('admindashboard');
- 
+
     });
 
     Route::controller(categoryController::class)->group(function () {
         Route::get('/admin/add-category', 'addcategory')->name('addcategory');
         Route::get('/admin/all-category', 'allcategory')->name('allcategory');
         Route::post('/admin/storecategory', 'storecategory')->name('storecategory');
- 
+
+        Route::get('/admin/edite-category/{id}', 'Editecategory')->name('editecategory');
+        Route::post('/admin/update-category', 'updatecategory')->name('updatecategory');
+        Route::get('/admin/delete-category/{id}', 'Deletcategory')->name('deletecategory');
+
+
     });
 
     Route::controller(subcategoryController::class)->group(function () {
-        Route::get('/admin/add-sub-category', 'addsubcat')->name('addsubcategory');
+        Route::get('/admin/add-subcategory', 'addsubcat')->name('addsubcategory');
         Route::get('/admin/all-sub-category', 'allsubcat')->name('allsubcategory');
- 
+        Route::post('/admin/storesubcategory', 'storesubcategory')->name('storesubcategory');
+
     });
 
 
     Route::controller(productsController::class)->group(function () {
         Route::get('/admin/add-product', 'addproduct')->name('addproduct');
         Route::get('/admin/all-product', 'allproduct')->name('allproduct');
- 
+
     });
 
     Route::controller(ordersController::class)->group(function () {
         Route::get('/admin/pending-orders', 'pendingord')->name('pendingorders');
         Route::get('/admin/completed-orders', 'completeord')->name('completeorders');
         Route::get('/admin/cancel-orders', 'cancelord')->name('cancelorders');
- 
+
     });
- 
-    
+
+
 });
 
 

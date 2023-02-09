@@ -38,23 +38,28 @@ All Category Single-Ecom
             </tr>
           </thead>
 
+         
+            
+          
+
           <tbody class="table-border-bottom-0">
+
+            @foreach ( $category as $categories)
+
             <tr>
-                <td>1</td>
-                <td>Electronics</td>
-                <td>10</td>
-                <td>100</td>
+                <td>{{$categories->id }}</td>
+                <td>{{$categories->category_name }}</td>
+                <td>{{$categories->subcategory_count }}</td>
+                <td>{{$categories->slug }}</td>
                 <td>
-                    <a href="" class="btn btn-primary">Edite</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('editecategory',$categories->id)}}" class="btn btn-primary">Edite</a>
+                    <a href="{{ route('deletecategory',$categories->id)}}" class="btn btn-danger">Delete</a>
 
 
                 </td>
-
-
-
-
             </tr>
+
+            @endforeach
         
             
           </tbody>
