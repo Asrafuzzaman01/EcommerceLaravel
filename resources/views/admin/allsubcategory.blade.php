@@ -16,7 +16,7 @@ All Sub Category Single-Ecom
     <div class="card"
       <h5 class="card-header">Available Sub Category</h5>
       @if(session()->has('message'))
-      <div class="alert alert-success">
+      <div class="alert alert-info">
         {{session()->get('message')}}
       </div>
       @endif
