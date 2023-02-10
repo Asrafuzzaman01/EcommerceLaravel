@@ -43,8 +43,8 @@ All Sub Category Single-Ecom
                 <td>{{ $allsubcategories->category_name }}</td>
                 <td>{{ $allsubcategories->product_count }}</td>
                 <td>
-                    <a href="" class="btn btn-primary">Edite</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="{{route('editesubcategory',$allsubcategories->id)}}" class="btn btn-primary">Edite</a>
+                    <a href="{{ route('deletesubcategory',$allsubcategories->id) }}" class="btn btn-danger">Delete</a>
 
 
                 </td>
