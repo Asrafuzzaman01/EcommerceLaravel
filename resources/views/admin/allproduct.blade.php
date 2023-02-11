@@ -36,11 +36,20 @@ All Product Single-Ecom
           </thead>
 
           <tbody class="table-border-bottom-0">
+            @foreach ($allproduct as $products )
+
+
             <tr>
-                <td>1</td>
-                <td>Fan</td>
-                <td>img</td>
-                <td>$100</td>
+                <td>{{ $products->id }}</td>
+                <td>{{ $products->product_name }}</td>
+                <td>
+                <img style="height:90px"; src="{{ asset($products->product_img )}}" alt="">
+                <br>
+                <a href="{{ route('editeproductimg',$products->id) }}" class="btn btn-info text-opacity-25">Update image</a>
+
+
+                </td>
+                <td>{{ $products->price }}</td>
                 <td>
                     <a href="" class="btn btn-primary">Edite</a>
                     <a href="" class="btn btn-danger">Delete</a>
@@ -48,11 +57,8 @@ All Product Single-Ecom
 
                 </td>
 
-
-
-
             </tr>
-
+            @endforeach
 
           </tbody>
 

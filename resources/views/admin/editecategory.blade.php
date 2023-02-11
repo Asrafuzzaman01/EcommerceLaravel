@@ -32,8 +32,8 @@ Edite Category Single-Ecom
                         </ul>
                     </div>
                 @endif
- 
-                    
+
+
                     <form  action="{{ route('updatecategory')}}" method="post">
                       @csrf
                       <input type="hidden" value=" {{$editecat->id}}"
@@ -47,7 +47,7 @@ Edite Category Single-Ecom
                         </div>
                       </div>
 
-                      
+
                       <div class="row justify-content-end">
                         <div class="col-sm-10">
                           <button type="submit" class="btn btn-primary">Update Category</button>

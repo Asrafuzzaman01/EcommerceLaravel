@@ -35,21 +35,21 @@ Add Product Single-Ecom
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Product Name</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="product_name"  name="product_name" placeholder="Leptop" />
+                            <input type="text" class="form-control" id="product_name"  name="product_name" />
                           </div>
                         </div>
 
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Product Price</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" id="price"  name="price" placeholder="$10" />
+                              <input type="text" class="form-control" id="price"  name="price" placeholder="$0" />
                             </div>
                           </div>
 
                           <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Product Quantity</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" id="productquantity"  name="productquantity" placeholder="100" />
+                              <input type="text" class="form-control" id="productquantity"  name="productquantity"  />
                             </div>
                           </div>
 

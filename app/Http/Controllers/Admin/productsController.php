@@ -20,7 +20,9 @@ class productsController extends Controller
 
     public function allproduct(){
 
-        return view('admin.allproduct');
+        $allproduct=product::latest()->get();
+
+        return view('admin.allproduct',compact('allproduct'));
     }
 
     public function Storeproduct(Request $request){
@@ -78,7 +80,39 @@ class productsController extends Controller
 
     }
 
+    public function Editeproductimg($id){
+        $productimg=product::findOrFail($id);
+
+        return view('admin.editeproductimg',compact('productimg'));
 
 
+
+    }
+    public function Updateproductimg(Request $request){
+
+        $request->validate([
+
+
+            'product_img' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+        $id=$request->id;
+        $image=$request->file('product_img');
+        $image_name=hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        $request->product_img->move(public_path('uploadimg'),$image_name);
+        $imgurl='uploadimg/'.$image_name;
+
+        product::findOrfail($id)->update([
+
+
+            'product_img'=>$imgurl,
+
+
+
+        ]);
+        return redirect()->route('allproduct')->with('message', '  New Image Update Successfully!');
+
+
+    }
 
 }
