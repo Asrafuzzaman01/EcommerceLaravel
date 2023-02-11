@@ -79,6 +79,8 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(productsController::class)->group(function () {
         Route::get('/admin/add-product', 'addproduct')->name('addproduct');
         Route::get('/admin/all-product', 'allproduct')->name('allproduct');
+        Route::post('/admin/storeproduct', 'Storeproduct')->name('storeproduct');
+
 
     });
 
@@ -94,6 +96,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 require __DIR__.'/auth.php';
+
 
 
 

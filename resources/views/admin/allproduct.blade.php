@@ -12,6 +12,13 @@ All Product Single-Ecom
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Page/</span>All Product</h4>
 
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+      {{session()->get('message')}}
+    </div>
+    @endif
+
+
 
     <!-- Bootstrap Table with Header - Light -->
     <div class="card"
@@ -45,8 +52,8 @@ All Product Single-Ecom
 
 
             </tr>
-        
-            
+
+
           </tbody>
 
         </table>
