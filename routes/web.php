@@ -5,28 +5,41 @@
     use App\Http\Controllers\Admin\categoryController;
     use App\Http\Controllers\Admin\dashboardcontroller;
     use App\Http\Controllers\Homecontroller;
+    use App\Http\Controllers\clientcontroller;
 
     use App\Http\Controllers\ProfileController;
     use Illuminate\Foundation\Application;
     use Illuminate\Support\Facades\Route;
     use Inertia\Inertia;
 
-    /*
-    |--------------------------------------------------------------------------
-    | Web Routes
-    |--------------------------------------------------------------------------
-    |
-    | Here is where you can register web routes for your application. These
-    | routes are loaded by the RouteServiceProvider within a group which
-    | contains the "web" middleware group. Now create something great!
-    |
-    */
+
 
 
     Route::controller(Homecontroller::class)->group(function () {
         Route::get('/','index')->name('home');
 
     });
+
+    Route::controller(clientcontroller::class)->group(function () {
+        Route::get('/user/category','Category')->name('category');
+
+        Route::get('/user/product','Singleproduct')->name('product');
+
+        Route::get('/user/addtocart','Addtocart')->name('addtocart');
+
+        Route::get('/user/checkout','Checkout')->name('checkout');
+
+        Route::get('/user/userprofile','Userprofile')->name('userprofile');
+
+        Route::get('/user/newrelease','Newreleas_product')->name('newrelease');
+
+        Route::get('/user/todayesdeals','Todayesdeals')->name('todayesdeals');
+
+        Route::get('/user/customerservice','Customerservice')->name('customerservice');
+
+    });
+
+
 
 
     // Route::get('/', function () {
