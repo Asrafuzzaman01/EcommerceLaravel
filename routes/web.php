@@ -80,10 +80,15 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/add-product', 'addproduct')->name('addproduct');
         Route::get('/admin/all-product', 'allproduct')->name('allproduct');
         Route::post('/admin/storeproduct', 'Storeproduct')->name('storeproduct');
-        Route::get('/admin/edite-productimg/{id}', 'Editeproductimg')->name('editeproductimg');
+        Route::get('/admin/editeproductimg/{id}', 'Editeproductimg')->name('editeproductimg');
+
 
         Route::post('/admin/update-productimg/{id}', 'Updateproductimg')->name('updateproductimg');
+        Route::get('/admin/editeproduct/{id}', 'Editeproduct')->name('editeproduct');
+        Route::post('/admin/update-product/{id}', 'Updateproduct')->name('updateproduct');
 
+
+        Route::get('/admin/delete-product/{id}', 'Deleteproduct')->name('deleteproduct');
 
     });
 

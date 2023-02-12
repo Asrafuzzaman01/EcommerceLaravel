@@ -51,8 +51,8 @@ All Product Single-Ecom
                 </td>
                 <td>{{ $products->price }}</td>
                 <td>
-                    <a href="" class="btn btn-primary">Edite</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('editeproduct',$products->id) }}" class="btn btn-primary">Edite</a>
+                    <a href="{{ route('deleteproduct',$products->id) }}" class="btn btn-danger">Delete</a>
 
 
                 </td>

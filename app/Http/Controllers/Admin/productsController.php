@@ -115,4 +115,61 @@ class productsController extends Controller
 
     }
 
+    public function Editeproduct($id){
+
+
+                $productinfo=product::findOrFail($id);
+                   return view('admin.editeproduct', compact('productinfo'));
+
+    }
+
+    public function Updateproduct(Request $request){
+
+        $productid=$request->id;
+
+        $request->validate([
+            'product_name' => 'required|unique:products',
+            'price' => 'required',
+            'productquantity' => 'required',
+            'product_short_des' => 'required',
+            'product_long_des' => 'required',
+
+        ]);
+
+        product::findOrFail( $productid)->update([
+            'product_name'=> $request->product_name,
+            'product_short_des'=> $request->product_short_des,
+            'product_long_des'=> $request->product_long_des,
+            'price'=> $request->price,
+            'productquantity'=> $request->productquantity,
+            'slug'=>strtolower(str_replace('','-',$request->product_name)),
+
+
+
+
+        ]);
+        return redirect()->route('allproduct')->with('message', '  product Update Successfully!');
+    }
+
+    public function Deleteproduct($id){
+
+        product::findOrFail($id)->delete();
+        $cat_id=product::where('id', $id)->value('product_category_id');
+
+        $subcat_id=product::where('id', $id)->value('propduct_subcategorey_id');
+
+        categories::where('id',$cat_id)->decrement('product_count', 1);
+        subcategory::where('id',$subcat_id)->decrement('product_count', 1);
+
+
+
+
+
+
+        return redirect()->route('allproduct' )->with('message', 'product deleted successfully');
+
+     }
+
+
+
 }
