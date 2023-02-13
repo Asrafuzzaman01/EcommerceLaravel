@@ -23,6 +23,8 @@
       <meta name="author" content="">
       <!-- bootstrap css -->
 
+      <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
       <link rel="stylesheet" type="text/css" href="{{asset('users')}}/css/bootstrap.min.css">
       <!-- style css -->
       <link rel="stylesheet" type="text/css" href="{{asset('users')}}/css/style.css">
@@ -138,7 +140,7 @@
                      <div class="login_menu">
                         <ul>
                            <li><a href="#">
-                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
                               <span class="padding_10">Cart</span></a>
                            </li>
                            <li><a href="#">
