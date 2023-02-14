@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\categories;
 
 class clientcontroller extends Controller
 {
-    public function Category(){
+    public function Category($id){
+       $category=categories::findOrFail($id);
 
-        return view ('user.category');
+        return view ('user.category', compact('category'));
     }
 
 

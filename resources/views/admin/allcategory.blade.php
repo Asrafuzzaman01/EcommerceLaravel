@@ -38,9 +38,9 @@ All Category Single-Ecom
             </tr>
           </thead>
 
-         
-            
-          
+
+
+
 
           <tbody class="table-border-bottom-0">
 
@@ -60,8 +60,8 @@ All Category Single-Ecom
             </tr>
 
             @endforeach
-        
-            
+
+
           </tbody>
 
         </table>

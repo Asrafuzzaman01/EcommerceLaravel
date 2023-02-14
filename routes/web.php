@@ -20,22 +20,23 @@
 
     });
 
+
     Route::controller(clientcontroller::class)->group(function () {
-        Route::get('/user/category','Category')->name('category');
+        Route::get('/category/{id}','Category')->name('category');
 
-        Route::get('/user/product','Singleproduct')->name('product');
+        Route::get('/product','Singleproduct')->name('product');
 
-        Route::get('/user/addtocart','Addtocart')->name('addtocart');
+        Route::get('/addtocart','Addtocart')->name('addtocart');
 
-        Route::get('/user/checkout','Checkout')->name('checkout');
+        Route::get('/checkout','Checkout')->name('checkout');
 
-        Route::get('/user/userprofile','Userprofile')->name('userprofile');
+        Route::get('/userprofile','Userprofile')->name('userprofile');
 
-        Route::get('/user/newrelease','Newreleas_product')->name('newrelease');
+        Route::get('/newrelease','Newreleas_product')->name('newrelease');
 
-        Route::get('/user/todayesdeals','Todayesdeals')->name('todayesdeals');
+        Route::get('/todayesdeals','Todayesdeals')->name('todayesdeals');
 
-        Route::get('/user/customerservice','Customerservice')->name('customerservice');
+        Route::get('/customerservice','Customerservice')->name('customerservice');
 
     });
 

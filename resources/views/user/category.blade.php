@@ -9,6 +9,6 @@ Category-page
 
 @section('content')
 
-category page
+<h2> {{ $category->category_name }}</h2>
 
 @endsection

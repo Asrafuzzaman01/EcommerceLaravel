@@ -1,5 +1,5 @@
 
-  @php
+    @php
        $category=App\Models\categories::latest()->get();// catyegory fatching
   @endphp
 
@@ -60,7 +60,7 @@
                            <li><a href="#">Best Sellers</a></li>
                            <li><a href="{{ route('category') }}">Gift Ideas</a></li>
                            <li><a href="{{ route('newrelease') }}">New Releases</a></li>
-                           <li><a href="{{ route('todayesdeals')}}">Today's Deals</a></li>
+                           <li><a href="{{ route('todayesdeals')}}">Todays Deals</a></li>
                            <li><a href="{{ route('customerservice') }}">Customer Service</a></li>
                         </ul>
                      </div>
@@ -90,22 +90,19 @@
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <a href="index.html">Home</a>
 
+                     @foreach ($category as $categorys )
 
-                                @foreach ($category as $categorys )
+                     <a href="{{route('category',$categorys->id)}}"> {{ $categorys->category_name }}</a>
 
-                                <a href="fashion.html">{{ $categorys->category_name }}</a>
-
-                                @endforeach
-
-
+                      @endforeach
 
                   </div>
+
                   <span class="toggle_icon" onclick="openNav()"><img  src="{{asset('users')}}/images/toggle-icon.png"></span>
                   <div class="dropdown">
                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category
                      </button>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
 
 
                                 @foreach ($category as $categorys )
