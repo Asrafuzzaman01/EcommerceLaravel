@@ -10,14 +10,6 @@ Home-page
 
 @section('content')
 
-
-
-
-
-
-
-
-
       <!-- Home section start -->
             <div class="fashion_section">
 

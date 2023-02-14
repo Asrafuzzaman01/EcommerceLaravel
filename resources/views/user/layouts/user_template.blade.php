@@ -58,7 +58,7 @@
                      <div class="custom_menu">
                         <ul>
                            <li><a href="#">Best Sellers</a></li>
-                           <li><a href="{{ route('category') }}">Gift Ideas</a></li>
+                           {{--  <li><a href="{{ route('category') }}">Gift Ideas</a></li>  --}}
                            <li><a href="{{ route('newrelease') }}">New Releases</a></li>
                            <li><a href="{{ route('todayesdeals')}}">Todays Deals</a></li>
                            <li><a href="{{ route('customerservice') }}">Customer Service</a></li>
@@ -92,8 +92,8 @@
 
                      @foreach ($category as $categorys )
 
-                     <a href="{{route('category',$categorys->id)}}"> {{ $categorys->category_name }}</a>
 
+                     <a href="{{route('category',[$categorys->id, $categorys->slug])}}"> {{ $categorys->category_name }}</a>
                       @endforeach
 
                   </div>
@@ -215,8 +215,8 @@
                <ul>
                   <li><a href="#">Best Sellers</a></li>
                   <li><a href="#">Gift Ideas</a></li>
-                  <li><a href="#">New Releases</a></li>
-                  <li><a href="#">Today's Deals</a></li>
+                  <li><a href="#">New Re'leases</a></li>
+                  <li><a href="#">Todays Deals</a></li>
                   <li><a href="#">Customer Service</a></li>
                </ul>
             </div>

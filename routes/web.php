@@ -22,6 +22,7 @@
 
 
     Route::controller(clientcontroller::class)->group(function () {
+        // Route::get('/category','Category')->name('category');
         Route::get('/category/{id}','Category')->name('category');
 
         Route::get('/product','Singleproduct')->name('product');
