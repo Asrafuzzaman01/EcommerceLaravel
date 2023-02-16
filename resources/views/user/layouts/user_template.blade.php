@@ -106,7 +106,7 @@
 
 
                                 @foreach ($category as $categorys )
-                                <a class="dropdown-item" href="#">{{ $categorys->category_name }}</a>
+                                <a class="dropdown-item" href="{{route('category',[$categorys->id, $categorys->slug])}}">{{ $categorys->category_name }}</a>
                                 @endforeach
 
                      </div>
@@ -151,6 +151,7 @@
             </div>
          </div>
          <!-- header section end -->
+
          <!-- banner section start -->
          <div class="banner_section layout_padding">
             <div class="container">

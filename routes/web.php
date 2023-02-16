@@ -22,25 +22,47 @@
 
 
     Route::controller(clientcontroller::class)->group(function () {
-        // Route::get('/category','Category')->name('category');
-        Route::get('/category/{id}','Category')->name('category');
 
-        Route::get('/product','Singleproduct')->name('product');
+        Route::get('/category/{id}/{slug}','Category')->name('category');
 
-        Route::get('/addtocart','Addtocart')->name('addtocart');
-
-        Route::get('/checkout','Checkout')->name('checkout');
-
-        Route::get('/userprofile','Userprofile')->name('userprofile');
+        Route::get('/product-details/{id}/{slug}','Singleproduct')->name('singleproduct');
 
         Route::get('/newrelease','Newreleas_product')->name('newrelease');
 
-        Route::get('/todayesdeals','Todayesdeals')->name('todayesdeals');
 
-        Route::get('/customerservice','Customerservice')->name('customerservice');
 
     });
 
+    Route::middleware(['auth','role:user'])->group(function () {
+
+        Route::controller(clientcontroller::class)->group(function () {
+
+            Route::get('/addtocart','Addtocart')->name('addtocart');
+
+            Route::post('/product-addtocart','proAddtocart')->name('proaddtocart');
+
+            Route::get('/items-remove/{id}','productitemremove')->name('removeitem');
+
+
+            Route::get('/checkout','Checkout')->name('checkout');
+
+            Route::get('/userprofile','Userprofile')->name('userprofile');
+            Route::get('/userprofile/pending-orders','Pendingorders')->name('pendingorder');
+
+            Route::get('/userprofile/history','History')->name('history');
+
+
+
+
+            Route::get('/todayesdeals','Todayesdeals')->name('todayesdeals');
+
+            Route::get('/customerservice','Customerservice')->name('customerservice');
+
+
+
+        });
+
+    });
 
 
 
@@ -66,7 +88,7 @@
     });
 
 
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth','role:admin'])->group(function () {
 
         Route::controller(dashboardcontroller::class)->group(function () {
             Route::get('/admin/dashboard', 'index')->name('admindashboard');
@@ -106,12 +128,13 @@
             Route::get('/admin/add-product', 'addproduct')->name('addproduct');
             Route::get('/admin/all-product', 'allproduct')->name('allproduct');
             Route::post('/admin/storeproduct', 'Storeproduct')->name('storeproduct');
+
             Route::get('/admin/editeproductimg/{id}', 'Editeproductimg')->name('editeproductimg');
 
 
-            Route::post('/admin/update-productimg/{id}', 'Updateproductimg')->name('updateproductimg');
-            Route::get('/admin/editeproduct/{id}', 'Editeproduct')->name('editeproduct');
-            Route::post('/admin/update-product/{id}', 'Updateproduct')->name('updateproduct');
+            Route::post('/admin/update-productimg', 'Updateproductimg')->name('updateproductimg');
+            Route::get('/admin/edite-product/{id}', 'Editeproduct')->name('editeproduct');
+            Route::post('/admin/update-product', 'Updateproduct')->name('updateproduct');
 
 
             Route::get('/admin/delete-product/{id}', 'Deleteproduct')->name('deleteproduct');

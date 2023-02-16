@@ -30,8 +30,25 @@ Category-page
                      <p class="price_text">Price  <span style="color: #262626;">$ {{ $product->price }}</span></p>
                      <div class="tshirt_img"><img  src={{asset($product->product_img)}}></div>
                      <div class="btn_main">
-                        <div class="buy_bt"><a href="#">Buy Now</a></div>
-                        <div class="seemore_bt"><a href="#">See More</a></div>
+
+                        <form action="{{ route('proaddtocart') }}" method="post">
+                            @csrf
+
+                            <div class="form-group">
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <input type="hidden" name="price" value="{{ $product->price }}">
+                                <input type="hidden" name="quantity" value="1">
+
+
+
+                            </div>
+
+                            <input class="btn btn-warning" type="submit" value="Buy Now">
+
+                        </form>
+
+
+                        <div class="seemore_bt"><a href="{{route('singleproduct',[$product->id, $product->slug])}}">See More</a></div>
                      </div>
                   </div>
                </div>

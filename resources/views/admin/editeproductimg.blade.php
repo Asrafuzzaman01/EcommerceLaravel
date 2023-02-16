@@ -31,7 +31,7 @@ Edite Product-image Single-Ecom
 
 
 
-            <form action="{{ route('updateproductimg') }}" method="post">
+            <form action="{{ route('updateproductimg') }}" method="post" enctype="multipart/form-data">
                         @csrf
 
 
