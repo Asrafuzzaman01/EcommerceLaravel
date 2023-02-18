@@ -94,7 +94,7 @@
     });
 
 
-    Route::middleware(['auth','role:admin'])->group(function () {
+    Route::middleware(['auth'])->group(function () {
 
         Route::controller(dashboardcontroller::class)->group(function () {
             Route::get('/admin/dashboard', 'index')->name('admindashboard');
@@ -149,7 +149,9 @@
 
         Route::controller(ordersController::class)->group(function () {
             Route::get('/admin/pending-orders', 'pendingord')->name('pendingorders');
+
             Route::get('/admin/completed-orders', 'completeord')->name('completeorders');
+
             Route::get('/admin/cancel-orders', 'cancelord')->name('cancelorders');
 
         });
