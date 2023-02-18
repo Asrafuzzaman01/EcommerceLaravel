@@ -43,10 +43,16 @@
 
             Route::get('/items-remove/{id}','productitemremove')->name('removeitem');
 
+            Route::get('/shipping-address','ShippingAddress')->name('shippingaddress');
 
-            Route::get('/checkout','Checkout')->name('checkout');
+            Route::post('/addshipping-address','addShippingAddress')->name('addshippingaddress');
+
+            Route::get('/checkout','Checkouts')->name('checkout');
+
+            Route::post('/place-order','Addplaceorder')->name('placeorder');
 
             Route::get('/userprofile','Userprofile')->name('userprofile');
+
             Route::get('/userprofile/pending-orders','Pendingorders')->name('pendingorder');
 
             Route::get('/userprofile/history','History')->name('history');

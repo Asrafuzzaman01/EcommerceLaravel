@@ -57,7 +57,7 @@ add-card-page
                       @endphp
 
                         @endforeach
-
+                        @if ($total > 0)
 
 
                         <tr>
@@ -66,7 +66,12 @@ add-card-page
                             <td class="text-info  ">Total Amount =</td>
                             <td class="text-info">${{ $total }}</td>
 
+
+                            <td> <a class="btn btn-primary" href="{{ route('shippingaddress') }}"> Check out now</a></td>
+
+
                         </tr>
+                        @endif
 
 
                     </table>
